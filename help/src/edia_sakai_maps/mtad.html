@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Maps: Tool Administration</title>
+	<style type="text/css">
+		/* Style for specific inline images */
+		/* Style for specific ordered lists */
+		/* Style for specific table cells */
+	</style>
+	<link type="text/css" href="/library/skin/tool_base.css" media="all" rel="stylesheet" />
+	<link type="text/css" href="/library/skin/default/tool.css" media="all" rel="stylesheet" />
+</head>
+<body>
+	<div class="helpBody">
+	<h2>Maps: Tool Administration</h2>
+	
+	<p>
+		The administration page is used for entering the Google Maps keys and for configuring the three 
+		'naviagation maps' located on right the side of the tool. 
+		Administrators can enter the following information:
+	</p>
+	
+	<ul>
+		<li>
+			For each of the three 'naviagation maps', the following properties can be set: 
+			<ul>
+				<li>The <strong>name</strong> of the map </li>		
+				<li>The <strong>latitude</strong> of the map's center </li>		
+				<li>The <strong>longitude</strong> of the map's center </li>		
+				<li>The <strong>zoom</strong> level of the map </li>		
+				<li>The <strong>map type</strong> of the map </li>		
+				<li>The <strong>image location</strong> of the actual image on the right side, this can any valid url.</li>		
+			</ul>
+		</li>
+		<li>
+			The default map: the initial map to display. 
+		</li>
+		<li>
+			Optionally, a set of Google Maps API keys. The Sakai Maps tool will not work without a Google Maps key.<br/> 
+			Keys can be configured server-wide in the sakai.properties file or individually for every sakai 
+			maps tool placement. Values set specifically for a tool override the default values set in the 
+			sakai.properties file.<br/>
+			A <strong>Google Maps key</strong>, which you can get from  
+			<a href="http://www.google.com/apis/maps/signup.html" target="_blank">Google</a>, is bound to a url. If 
+			your map is reachable by several URLs, you will need a key for each url. Please note that the 
+			form does not validate the key, an invalid key is accepted and will result in an error 
+			message when opening the maps page.<br/>
+			If there aren't any keys defined, only an Add button will be displayed. Click that to add the first key.
+			The URL field is optional if you're server is only accessible under a single url. You can add more keys
+			by clicking Add again and you can remove specific keys by clicking the Delete button.<br/>
+		</li>
+	</ul>
+	<p>
+		N.B. You can obtain these map configuration values using <a href="http://maps.google.com">Google Maps on the web</a>. 
+		First, navigate to your desired map. Then click on the 'link to this page' link just above the right top 
+		corner of the map. The link will appear in your browsers address bar. The next example illustrates how the 
+		values appear in the generated link:
+	</p>
+	<p>
+		http://maps.google.com/maps?ie=UTF8&om=1&ll=52.389849,4.923248&spn=0.191505,0.462799&z=11
+	</p>
+	<p>
+		Latitude and longitude appear in the ll parameter of the URL as ll=lat,long. In the example above these 
+		values are: lat=52.389849 and long=4.923248
+	</p>
+	<p>
+		Zoom level appears in the z parameter as z=zoom. In the examples above: zoom=11
+	</p>
+	<p>
+		The image must be linked using a relative path to a location inside Sakai (e.g. from the resource tree) 
+		or using a full path to a location outside Sakai (must start with http://). 
+	</p>
+	
+	</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <name>Sakai Maps Tool</name>
+  <groupId>nl.edia</groupId>
+  <artifactId>edia-sakai-maps-tool</artifactId>
+  <organization>
+    <name>Edia</name>
+    <url>http://www.edia.nl/</url>
+  </organization>
+  <inceptionYear>2007</inceptionYear>
+  <parent>
+    <artifactId>edia-sakai-maps-base</artifactId>
+    <groupId>nl.edia</groupId>
+    <version>4.2.0-SNAPSHOT</version>
+  </parent>
+  <packaging>war</packaging>
+  <dependencies>
+    <!-- our tool internal dependencies -->
+    <dependency>
+      <groupId>nl.edia</groupId>
+      <artifactId>edia-sakai-maps-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nl.edia</groupId>
+      <artifactId>edia-sakai-utils</artifactId>
+    </dependency>
+    <!-- Spring dependencies. -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+    <!-- Various Sakai dependencies -->
+    <dependency>
+      <groupId>org.sakaiproject.kernel</groupId>
+      <artifactId>sakai-kernel-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.sakaiproject.kernel</groupId>
+      <artifactId>sakai-component-manager</artifactId>
+    </dependency>
+    <!-- Commons JARS put in shared/lib by Sakai -->
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+    </dependency>
+    <!-- in shared/lib -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+    </dependency>
+    <!-- in WEB-INF/lib -->
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <resources>
+      <resource>
+        <directory>${basedir}/src/bundle</directory>
+        <includes>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/java</directory>
+        <includes>
+          <include>**/*.hbm.xml</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
+    <sourceDirectory>src/java</sourceDirectory>
+  </build>
+</project>

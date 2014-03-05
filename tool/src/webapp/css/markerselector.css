@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+body {
+	padding-bottom: 200px; /* To make room for types added by users. */
+}
+
+.markerselector {
+	width: 50px;
+}
+
+.selectorcolumn {
+	background-image: url(../icons/001.png); 
+	background-repeat: no-repeat;
+	padding-left: 25px;
+}
+
+tr {
+	height: 30px;
+}
+
+.actionbutton:hover {
+	cursor: pointer;
+}
+
+.markertypetable td {
+	background-color: silver;
+}
+
+.markername {
+	width: 200px;
+	margin-right: 10px;
+}
+
+.markerindex {
+	font-weight: bold;
+	text-align: center;
+}
+
+option:hover {
+	background-color: white;
+}

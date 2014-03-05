@@ -1,0 +1,107 @@
+@CHARSET "UTF-8";
+
+div {
+	margin: 0;
+	padding: 0;
+}
+
+#mapnav {
+	padding-top: 10px;
+	width: 806px;
+	height: 492px;
+}
+
+#map {
+	width: 640px;
+	height: 492px;
+	float: left;
+}
+
+#mapSelectButtons {
+	float: left;
+}
+
+.mapSelectButton {
+	margin: 0px;
+	padding: 0px 0px 6px 6px;
+	float: left;
+	clear: both;
+}
+
+
+
+#mapfooter {
+	display: block;
+	clear: both;
+}
+
+#markerTypesSelector ul {
+	margin: 0;
+	margin-top: 5px;
+	padding: 0;
+}
+#markerTypesSelector ul li {
+	display: inline;
+	margin-right: 5px;
+}
+
+#markerTypesSelector ul li img {
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+/* Infowindow styles */
+.infowindow h1 {
+	font-size: 12px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.infowindow p {
+	font-size: 11px;
+	font-family: sans-serif;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 5px;
+}
+
+.infowindow th {
+	width: 30px;
+	vertical-align: top;
+}
+
+.infowindowbutton {
+	width: 90px;
+	margin: 0;
+	margin-top: 10px;
+	padding: 0;
+}
+
+#ctitle_input, #cdesc_input, #curl_input, #ctype_input {
+	width: 250px;
+	margin: 0;
+	padding: 0;
+}
+
+#buttonpanel {
+}
+
+.readmorelink {
+	display: none; /* switched on in JavaScript */
+	font-size: 11px;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.resourceSpan {
+	display: block;
+	width: 250px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.editfileslink {
+}

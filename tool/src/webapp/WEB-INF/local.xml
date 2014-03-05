@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <import resource="controllers.xml" />
+  <import resource="interceptors.xml" />
+  <bean id="handlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="interceptors">
+      <list>
+        <ref bean="openSessionInViewInterceptor" />
+        <ref bean="pageVisitInterceptor"/>
+      </list>
+    </property>
+    <property name="mappings">
+      <props>
+        <prop key="createmarker.xml">createMarkerController</prop>
+        <prop key="readmarker.xml">readMarkerController</prop>
+        <prop key="listmarkers.xml">listMarkersController</prop>
+        <prop key="listmarkertypes.xml">listMarkerTypesController</prop>
+        <prop key="updatemarker.xml">updateMarkerController</prop>
+        <prop key="updatemarkertypes.xml">updateMarkerTypesController</prop>
+        <prop key="deletemarker.xml">deleteMarkerController</prop>
+        
+        <prop key="route.spring">routeController</prop>
+        <prop key="index.spring">indexController</prop>
+        <prop key="admin.spring">editMapToolConfiguration</prop>
+        <prop key="types.spring">updateMarkerTypesController</prop>
+        <prop key="markerview.spring">markerViewController</prop>
+        <prop key="markeredit.spring">markerEditController</prop>
+        <prop key="filepickerproxy.spring">filePickerProxyCntroller</prop>
+        
+      </props>
+    </property>
+    <property name="defaultHandler" value="routeController"/>
+  </bean>
+
+  <!-- 
+    The internal resource resolver is by default the last in the resolver chain.
+   -->
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix">
+      <value>WEB-INF/jsp/</value>
+    </property>
+    <property name="suffix">
+      <value>.jsp</value>
+    </property>
+    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+  </bean>
+  <!-- 
+    The XML view resolver is the first resolver in the chain.
+   -->
+  <bean id="xmlViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+    <property name="order" value="1" />
+    <property name="location" value="/WEB-INF/xmlviews.xml" />
+  </bean>
+
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basename" value="Messages-Maps"/>
+    <property name="useCodeAsDefaultMessage" value="true"/>
+  </bean>
+  
+  <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    <property name="exceptionAttribute" value="exception"/>
+    <property name="exceptionMappings">
+      <props>
+        <prop key="org.sakaiproject.exception.IdUnusedException">notfound</prop>
+      </props>
+    </property>
+  </bean>
+   
+</beans>

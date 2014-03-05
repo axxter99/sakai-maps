@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!-- 
+
+  Copyright (c) 2007 Edia (www.edia.nl)
+  
+  Licensed under the Educational Community License version 1.0
+  
+  This Original Work, including software, source code, documents,
+  or other related items, is being provided by the copyright holder(s)
+  subject to the terms of the Educational Community License. By
+  obtaining, using and/or copying this Original Work, you agree that you
+  have read, understand, and will comply with the following terms and
+  conditions of the Educational Community License:
+  
+  Permission to use, copy, modify, merge, publish, distribute, and
+  sublicense this Original Work and its documentation, with or without
+  modification, for any purpose, and without fee or royalty to the
+  copyright holder(s) is hereby granted, provided that you include the
+  following on ALL copies of the Original Work or portions thereof,
+  including modifications or derivatives, that you make:
+  
+  
+  The full text of the Educational Community License in a location viewable to
+  users of the redistributed or derivative work.
+  
+  
+  Any pre-existing intellectual property disclaimers, notices, or terms and
+  conditions.
+  
+  
+  Notice of any changes or modifications to the Original Work, including the
+  date the changes were made.
+  
+  
+  Any modifications of the Original Work must be distributed in such a manner as
+  to avoid any confusion with the Original Work of the copyright holders.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+  CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  
+  The name and trademarks of copyright holder(s) may NOT be used
+  in advertising or publicity pertaining to the Original or Derivative
+  Works without specific, written prior permission. Title to copyright in
+  the Original Work and any associated documentation will at all times
+  remain with the copyright holders.
+  
+ -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="nl.edia.sakai.tool.maps.model.Marker" table="edia_maps_marker">
+		
+		<id name="id" type="long">
+			<generator class="native">
+				<param name="sequence">EDIA_MAPS_MARKER_S</param>
+			</generator>
+		</id>
+		
+		<property name="lat" column="marker_lat" type="float" not-null="true"/>
+		
+		<property name="lng" column="marker_lng" type="float" not-null="true"/>
+		
+		<property name="title" column="marker_title" type="string"/>
+		
+		<property name="description" column="marker_description" type="text"/>
+		
+		<list name="resources" table="edia_maps_marker_resources" lazy="false" fetch="join">
+			<key column="marker_id"/>
+			<index column="resource_idx"/>
+			<element column="`resource`" type="string"/>
+		</list>
+		
+		<property name="url" column="marker_url" type="string" not-null="false"/>
+        
+        <many-to-one name="type" 
+          column="marker_type" 
+          class="nl.edia.sakai.tool.maps.model.MarkerType" 
+          not-null="false"
+          fetch="join"
+          />
+        
+        <property name="owner" column="marker_owner" not-null="false"/>
+        
+        <property name="context" column="marker_context" not-null="false"/>
+        
+        <property name="creationDate" column="marker_creation_date" type="timestamp"/>
+        
+        <property name="modificationDate" column="marker_modification_date" type="timestamp"/>
+        
+	</class>
+</hibernate-mapping>

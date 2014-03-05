@@ -1,0 +1,98 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- TODO: set main controller here  -->
+
+	<bean name="abstractMarkerController" abstract="true">
+		<property name="errorView" value="errorXml" />
+		<property name="markerService" ref="nl.edia.sakai.tool.maps.MarkerService" />
+	</bean>
+	
+	<bean name="createMarkerController" class="nl.edia.sakai.tool.maps.controllers.CreateMarkerController"
+			parent="abstractMarkerController">
+		<property name="view" value="marker" />
+	</bean>
+	
+	<bean name="readMarkerController" class="nl.edia.sakai.tool.maps.controllers.ReadMarkerController"
+			parent="abstractMarkerController">
+		<property name="view" value="marker" />
+	</bean>
+	
+	<bean name="listMarkersController" class="nl.edia.sakai.tool.maps.controllers.ListMarkersController"
+			parent="abstractMarkerController">
+		<property name="view" value="markers" />
+	</bean>
+	
+	<bean name="listMarkerTypesController" class="nl.edia.sakai.tool.maps.controllers.ListMarkerTypesController"
+			parent="abstractMarkerController">
+		<property name="view" value="markertypes" />
+	</bean>
+	
+	<bean name="updateMarkerController" class="nl.edia.sakai.tool.maps.controllers.UpdateMarkerController"
+			parent="abstractMarkerController">
+		<property name="view" value="marker" />
+	</bean>
+	
+	<bean name="deleteMarkerController" class="nl.edia.sakai.tool.maps.controllers.DeleteMarkerController"
+			parent="abstractMarkerController">
+		<property name="view" value="markerId" />
+	</bean>
+
+	<bean name="indexController" class="nl.edia.sakai.tool.maps.controllers.IndexController">
+		<property name="view" value="index" />
+		<property name="commandName" value="config" />
+		<property name="mapToolConfigurationService" ref="nl.edia.sakai.tool.maps.MapToolConfigurationService" />
+		<property name="stateManager" ref="stateManager" />
+	</bean>
+
+	<bean name="abstractMarkerWindowController" abstract="true">
+		<property name="commandName" value="marker" />
+		<property name="markerService" ref="nl.edia.sakai.tool.maps.MarkerService" />
+		<property name="contentHostingService" ref="org.sakaiproject.content.api.ContentHostingService" />
+		<property name="entityManager" ref="org.sakaiproject.entity.api.EntityManager" />
+		<property name="contentTypeImageService" ref="org.sakaiproject.content.api.ContentTypeImageService"/>
+	</bean>
+
+	<bean name="markerViewController" class="nl.edia.sakai.tool.maps.controllers.MarkerViewController"
+			parent="abstractMarkerWindowController">
+		<property name="view" value="markerview" />
+	</bean>
+
+	<bean name="markerEditController" class="nl.edia.sakai.tool.maps.controllers.MarkerEditController"
+			parent="abstractMarkerWindowController">
+		<property name="view" value="markeredit" />
+		<property name="stateManager" ref="stateManager" />
+	</bean>
+
+	<!-- tool level manager that manages the tool session state. -->
+	<bean name="stateManager" class="nl.edia.sakai.tool.maps.utils.StateManager">
+		<property name="entityManager" ref="org.sakaiproject.entity.api.EntityManager" />
+	</bean>
+
+	<bean name="filePickerProxyCntroller" class="nl.edia.sakai.tool.maps.controllers.FilePickerProxyController">
+		<property name="entityManager" ref="org.sakaiproject.entity.api.EntityManager" />
+		<property name="stateManager" ref="stateManager" />
+	</bean>
+
+	<bean name="editMapToolConfiguration" class="nl.edia.sakai.tool.maps.controllers.EditMapToolConfigurationController">
+		<property name="successView" value="redirect:index.spring" />
+		<property name="formView" value="admin" />
+		<property name="commandName" value="config" />
+		<property name="mapToolConfigurationService" ref="nl.edia.sakai.tool.maps.MapToolConfigurationService" />
+	</bean>
+
+	<bean name="updateMarkerTypesController" class="nl.edia.sakai.tool.maps.controllers.UpdateMarkerTypesController"
+			parent="abstractMarkerController">
+		<property name="formView" value="types" />
+		<property name="successView" value="redirect:index.spring" />
+		<property name="markerService" ref="nl.edia.sakai.tool.maps.MarkerService" />
+	</bean>
+
+	<bean name="routeController" class="nl.edia.sakai.tool.maps.controllers.RouteController">
+		<property name="successView" value="redirect:index.spring" />
+		<property name="toolAdminView" value="redirect:admin.spring" />
+		<property name="notConfiguredView" value="notconfigured" />
+		<property name="mapToolConfigurationService" ref="nl.edia.sakai.tool.maps.MapToolConfigurationService" />
+		<property name="sessionManager" ref="org.sakaiproject.tool.api.SessionManager"/>
+	</bean>
+
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- 
+    This documents contains all the beans that render a certain
+    xml/xslt view wich are matched by name.
+    Please note that the absence of a xslt stylesheet makes
+    the output xml
+   -->
+   
+  <bean name="nl.edia.sakai.tool.maps.views.AbstractXsltView" abstract="true">
+    <property name="stylesheetLocation" value="WEB-INF/xsl/plaincopy.xsl"/>
+  </bean> 
+  <bean name="marker" class="nl.edia.sakai.tool.maps.views.MarkerXsltView" parent="nl.edia.sakai.tool.maps.views.AbstractXsltView"/>
+  <bean name="markers" class="nl.edia.sakai.tool.maps.views.MarkersXsltView" parent="nl.edia.sakai.tool.maps.views.AbstractXsltView"/>
+  <bean name="markertypes" class="nl.edia.sakai.tool.maps.views.MarkerTypesXsltView" parent="nl.edia.sakai.tool.maps.views.AbstractXsltView"/>
+  <bean name="markerId" class="nl.edia.sakai.tool.maps.views.MarkerIdXsltView" parent="nl.edia.sakai.tool.maps.views.AbstractXsltView"/>
+  <bean name="errorXml" class="nl.edia.sakai.tool.maps.views.ErrorXsltView" parent="nl.edia.sakai.tool.maps.views.AbstractXsltView"/>
+</beans>

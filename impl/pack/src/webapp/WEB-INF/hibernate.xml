@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean id="nl.edia.sakai.tool.maps.model.AdditionalHibernateMappings"
+    class="org.sakaiproject.springframework.orm.hibernate.impl.AdditionalHibernateMappingsImpl">
+    <property name="mappingResources">
+      <list>
+        <value>nl/edia/sakai/tool/maps/model/GoogleMapsKey.hbm.xml</value>
+        <value>nl/edia/sakai/tool/maps/model/Marker.hbm.xml</value>
+        <value>nl/edia/sakai/tool/maps/model/MarkerType.hbm.xml</value>
+        <value>nl/edia/sakai/tool/maps/model/MapToolConfiguration.hbm.xml</value>
+        <value>nl/edia/sakai/tool/maps/model/MapConfiguration.hbm.xml</value>
+      </list>
+    </property>
+  </bean>
+</beans>

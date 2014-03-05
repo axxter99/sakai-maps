@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <name>Sakai Maps Pack</name>
+  <groupId>nl.edia</groupId>
+  <artifactId>edia-sakai-maps-pack</artifactId>
+  <organization>
+    <name>Edia</name>
+    <url>http://www.edia.nl/</url>
+  </organization>
+  <inceptionYear>2007</inceptionYear>
+  <parent>
+    <artifactId>edia-sakai-maps-base</artifactId>
+    <groupId>nl.edia</groupId>
+    <version>4.2.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  <!-- you must deploy your pack to components -->
+  <packaging>sakai-component</packaging>
+  <properties>
+    <deploy.target>components</deploy.target>
+  </properties>
+  <dependencies>
+    <!-- the components pack should include your dao and logic impl 
+			in the war bundle and the components.xml file 
+			(which is basically a spring-config file with a special name -->
+    <dependency>
+      <groupId>nl.edia</groupId>
+      <artifactId>edia-sakai-maps-impl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nl.edia</groupId>
+      <artifactId>edia-sakai-utils</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <resources />
+    <sourceDirectory>src/java</sourceDirectory>
+  </build>
+</project>

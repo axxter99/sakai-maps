@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<registration>
+
+	<tool 
+		id="edia.sakai.maps" 
+		title="Maps" 
+		description="The Maps tool integrates Google Maps into Sakai." 
+		accessSecurity="tool">
+
+		<!-- Configure categories -->
+		<category name="sakai.sample" />
+		<category name="course" />
+		<category name="project" />
+		<category name="myworkspace" />
+
+		<!-- Configure title bar for portal -->
+		<configuration name="reset.button" value="true" />
+		<configuration name="help.button" value="true" />
+		<!-- 
+		<configuration name="help.id" value="edia.sakai.maps" type="final" />
+		 -->
+	</tool>
+</registration>

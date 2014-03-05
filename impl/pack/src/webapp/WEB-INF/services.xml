@@ -1,0 +1,245 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- Put in as target -->
+  <bean id="nl.edia.sakai.tool.maps.MarkerServiceTarget" init-method="init" class="nl.edia.sakai.tool.maps.impl.MarkerServiceImpl">
+    <property name="functionManager" ref="org.sakaiproject.authz.api.FunctionManager"/>
+    <property name="sessionFactory" ref="org.sakaiproject.springframework.orm.hibernate.GlobalSessionFactory" />
+    <property name="markerTypeImages">
+      <list>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>000.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#b5b5b5</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>001.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#cc3333</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>002.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#dd4477</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>003.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#994499</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>004.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#6633cc</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>005.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#336699</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>006.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#3366cc</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>007.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#22aa99</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>008.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#329262</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>009.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#109618</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>010.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#66aa00</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>011.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#aaaa11</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>012.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#d6ae00</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>013.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#ee8800</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>014.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#dd5511</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>015.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#a87070</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>016.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#8c6d8c</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>017.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#627487</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>018.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#7083a8</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>019.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#5c8d87</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>020.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#898951</value>
+          </constructor-arg>
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MarkerTypeImage">
+          <constructor-arg>
+            <value>021.png</value>
+          </constructor-arg>
+          <constructor-arg>
+            <value>#b08b59</value>
+          </constructor-arg>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <!-- put the DAO in a transaction proxy -->
+  <bean id="nl.edia.sakai.tool.maps.MarkerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager" ref="org.sakaiproject.springframework.orm.hibernate.GlobalTransactionManager" />
+    <property name="target" ref="nl.edia.sakai.tool.maps.MarkerServiceTarget" />
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- Put in as target -->
+  <bean id="nl.edia.sakai.tool.maps.MapToolConfigurationServiceTarget" init-method="init"
+    class="nl.edia.sakai.tool.maps.impl.MapToolConfigurationServiceImpl">
+    <property name="functionManager" ref="org.sakaiproject.authz.api.FunctionManager"/>
+    <property name="sessionFactory" ref="org.sakaiproject.springframework.orm.hibernate.GlobalSessionFactory" />
+    <property name="defaultMaps">
+      <list>
+        <bean class="nl.edia.sakai.tool.maps.model.MapConfiguration">
+          <property name="name" value="Amsterdam" />
+          <property name="centerLat" value="52.39f" />
+          <property name="centerLng" value="4.90415f" />
+          <property name="zoom" value="12" />
+          <property name="image" value="gfx/amsterdam.jpg" />
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MapConfiguration">
+          <property name="name" value="The Netherlands" />
+          <property name="centerLat" value="52.08547f" />
+          <property name="centerLng" value="5.62417f" />
+          <property name="zoom" value="7" />
+          <property name="image" value="gfx/netherlands.jpg" />
+        </bean>
+        <bean class="nl.edia.sakai.tool.maps.model.MapConfiguration">
+          <property name="name" value="The World" />
+          <property name="centerLat" value="23.563987128451217f" />
+          <property name="centerLng" value="10.8984375f" />
+          <property name="zoom" value="2" />
+          <property name="image" value="gfx/world.jpg" />
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <!-- put the DAO in a transaction proxy -->
+  <bean id="nl.edia.sakai.tool.maps.MapToolConfigurationService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager" ref="org.sakaiproject.springframework.orm.hibernate.GlobalTransactionManager" />
+    <property name="target" ref="nl.edia.sakai.tool.maps.MapToolConfigurationServiceTarget" />
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+
+</beans>

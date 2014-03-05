@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <bean id="helpMapsOverview" class="org.sakaiproject.component.app.help.model.ResourceBean">
+    <property name="docId">
+      <value>mtov</value>
+    </property>
+    <property name="name">
+      <value>Maps Overview</value>
+    </property>
+    <property name="location">
+      <value>/edia_sakai_maps/mtov.html</value>
+    </property>
+    <property name="defaultForTool">
+      <value>edia.sakai.maps</value>
+    </property>
+  </bean>
+
+  <bean id="helpMapsUsage" class="org.sakaiproject.component.app.help.model.ResourceBean">
+    <property name="docId">
+      <value>mtus</value>
+    </property>
+    <property name="name">
+      <value>Using the Maps Tool</value>
+    </property>
+    <property name="location">
+      <value>/edia_sakai_maps/mtus.html</value>
+    </property>
+  </bean>
+
+  <bean id="helpMapsTypesAdmin" class="org.sakaiproject.component.app.help.model.ResourceBean">
+    <property name="docId">
+      <value>mtta</value>
+    </property>
+    <property name="name">
+      <value>Marker Types Administration</value>
+    </property>
+    <property name="location">
+      <value>/edia_sakai_maps/mtta.html</value>
+    </property>
+  </bean>
+
+  <bean id="helpMapsToolAdmin" class="org.sakaiproject.component.app.help.model.ResourceBean">
+    <property name="docId">
+      <value>mtad</value>
+    </property>
+    <property name="name">
+      <value>Tool Administration</value>
+    </property>
+    <property name="location">
+      <value>/edia_sakai_maps/mtad.html</value>
+    </property>
+  </bean>
+
+  <bean id="helpMapsSakaiAdmin" class="org.sakaiproject.component.app.help.model.ResourceBean">
+    <property name="docId">
+      <value>mtsa</value>
+    </property>
+    <property name="name">
+      <value>Permissions</value>
+    </property>
+    <property name="location">
+      <value>/edia_sakai_maps/mtsa.html</value>
+    </property>
+  </bean>
+
+  <bean id="org.sakaiproject.api.app.help.TableOfContents" class="org.sakaiproject.component.app.help.model.TableOfContentsBean">
+    <property name="name">
+      <value>root</value>
+    </property>
+    <property name="categories">
+      <list>
+        <bean id="mapsCategory" class="org.sakaiproject.component.app.help.model.CategoryBean">
+          <property name="name">
+            <value>Maps</value>
+          </property>
+          <property name="resources">
+            <list>
+              <ref bean="helpMapsOverview" />
+              <ref bean="helpMapsUsage" />
+              <ref bean="helpMapsTypesAdmin" />
+              <ref bean="helpMapsToolAdmin" />
+              <ref bean="helpMapsSakaiAdmin" />
+            </list>
+          </property>
+        </bean>
+      </list>
+    </property>
+  </bean>
+</beans>

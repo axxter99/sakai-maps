@@ -1,0 +1,14 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="openSessionInViewInterceptor" 
+	  		class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+		<property name="sessionFactory" ref="org.sakaiproject.springframework.orm.hibernate.GlobalSessionFactory"/> 	
+		<property name="flushModeName" value="FLUSH_AUTO"></property>
+	</bean>
+  
+  <bean id="pageVisitInterceptor" class="nl.edia.sakai.tool.maps.interceptors.PageVisitInterceptor">
+    <property name="pathPattern" value="/((?:index|admin|types)\.spring)"/>
+    <property name="sessionManager" ref="org.sakaiproject.tool.api.SessionManager"/>
+  </bean>
+</beans>

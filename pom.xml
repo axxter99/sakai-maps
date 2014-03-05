@@ -4,7 +4,7 @@
   <name>Sakai Maps Base</name>
   <groupId>nl.edia</groupId>
   <artifactId>edia-sakai-maps-base</artifactId>
-  <version>4.2.0-SNAPSHOT</version>
+  <version>4.2.0</version>
   <organization>
     <name>Edia</name>
     <url>http://www.edia.nl/</url>
@@ -31,13 +31,13 @@
       <dependency>
         <groupId>nl.edia</groupId>
         <artifactId>edia-sakai-maps-api</artifactId>
-        <version>4.2.0-SNAPSHOT</version>
+        <version>4.2.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>nl.edia</groupId>
         <artifactId>edia-sakai-maps-impl</artifactId>
-        <version>4.2.0-SNAPSHOT</version>
+        <version>4.2.0</version>
       </dependency>
       <dependency>
         <groupId>nl.edia</groupId>
@@ -59,9 +59,9 @@
     </plugins>
   </build>
   <scm>
-    <url>scm:svn:https://source.sakaiproject.org/contrib/edia/maps/trunk</url>
-    <connection>scm:svn:https://source.sakaiproject.org/contrib/edia/maps/trunk</connection>
-    <developerConnection>scm:svn:https://source.sakaiproject.org/contrib/edia/maps/trunk</developerConnection>
+    <url>scm:svn:https://source.sakaiproject.org/contrib/edia/maps/tags/4.2.0</url>
+    <connection>scm:svn:https://source.sakaiproject.org/contrib/edia/maps/tags/4.2.0</connection>
+    <developerConnection>scm:svn:https://source.sakaiproject.org/contrib/edia/maps/tags/4.2.0</developerConnection>
   </scm>
   <distributionManagement>
     <repository>
